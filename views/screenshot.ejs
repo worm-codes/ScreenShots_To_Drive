@@ -1,0 +1,154 @@
+<%-include("partials/header") %>
+<Style>
+	body{
+		margin:100px;
+		background-image: url("https://images.pexels.com/photos/1631677/pexels-photo-1631677.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+		background-repeat: no-repeat;
+  background-size: cover;
+		background-position: center;
+	
+	}
+	
+	
+	.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+	.glow {
+  font-size: 50px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #09db44, 0 0 40px #09db44, 0 0 50px #09db44, 0 0 60px #09db44 0 0 70px #09db44;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px 
+#f29655, 0 0 40px 
+#f29655, 0 0 50px 
+#f29655, 0 0 60px 
+#f29655, 0 0 70px 
+#f29655, 0 0 80px 
+#f29655;
+  }
+}
+	
+	h1 {
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
+}
+	
+
+</Style>
+
+
+
+<div class="container">
+	<div  class="d-flex justify-content-center align-items-center">
+		
+		<h1>
+			<b class="glow">SCREENSHOT  APP </b>
+		</h1>
+		
+	</div>
+	<div class="d-flex justify-content-center align-items-center">
+		
+		<h1 >
+			<b>Made by <a id="link"  style="text-decoration : none; color:white; background:none;" target="_blank" href="https://www.linkedin.com/in/o%C4%9Fuzhan-%C3%A7evik-552820147/">Oğuzhan Çevik</a></b>
+		</h1>
+		
+	</div>
+	
+	<form action="/screenshot" method="POST">
+	<div class="form-row mt-3"  style="width:30%; margin:0 auto;">
+    <div class="col form-group">
+      <input type="text" class="form-control text-center font-weight-bold" placeholder="WEBPAGE NAME" name="webname">
+    </div>
+   
+		
+  </div>
+		<div class="form-row" style="width:30%; margin:0 auto;">
+    
+    <div class="col form-group">
+      <input type="text" class="form-control text-center font-weight-bold" placeholder="WEBPAGE URL" name="weburl">
+    </div>
+		
+  </div>
+	<div class="d-flex justify-content-center align-items-center ">
+		<button href="/" class="btn btn-danger btn-lg  glow-on-hover" style="width:29%;">SEND REQUEST !</button>
+	</div>
+		
+</form>
+	<div class="d-flex justify-content-center align-items-center " style="margin-top:10%;">
+		<a href="https://drive.google.com/drive/folders/1m3imEK9wP3R9R-15cDYE7isNbUv5JgIY?usp=sharing" class="btn btn-success btn-lg" style="width:30%;" target="_blank">View Screenshots on Google Drive</a>
+	</div>
+	
+	<div class="d-flex justify-content-center align-items-center mt-3">
+		<a href="https://github.com/worm-codes/Screenshot-to-Drive" class="btn  btn-lg" style="width:30%; background-color:#c9510c; color:white;" target="_blank">View Source Code on Github</a>
+	</div>
+</div>
+
+
+<%- include("partials/footer") %>
