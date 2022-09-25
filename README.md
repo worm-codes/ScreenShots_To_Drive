@@ -1,5 +1,5 @@
 ## What does it do
-### it takes a screenshot from spesific webpage via screenshotmachine API and saves it to your spesific google drive folder with spesific name
+### it takes a screenshot from spesific webpage via screenshotmachine API and saves it to your spesific google drive folder with spesific name, it is not working now because of API key.
 ## Technologies
 - Node.js 
 - ScreenShotMachine API 
